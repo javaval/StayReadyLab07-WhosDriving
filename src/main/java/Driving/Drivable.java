@@ -1,7 +1,6 @@
 package Driving;
 
 public interface Drivable {
-
     /**
      * Gets the top speed of the drivable vehicle
      *

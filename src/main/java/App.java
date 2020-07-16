@@ -15,6 +15,7 @@ public class App {
      * will change the appExecutionStatus variable to 0;
      * @param args
      */
+    
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         if (args[0].equals("test"))
@@ -22,7 +23,8 @@ public class App {
         Console c = new Console(in);
 
         System.out.println("What kinda of vehicle do you want to drive");
-        Drivable vehicle = getVehicle(c);
+        
+        Drivable vehicle = getVehicle(c);;
 
         System.out.println("How far do you want to travel");
         Double distance = getDistance(c);
@@ -54,8 +56,6 @@ public class App {
      * @param c
      * @return Input from Console c as Double
      */
-    public static Double getDistance(Console c) {
-        String input = c.getInput();
-        return null;
-    }
+    //public static Double getDistance(Console c);
+    
 }

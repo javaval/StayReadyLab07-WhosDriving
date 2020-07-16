@@ -3,6 +3,12 @@ package Vehicles;
 import Driving.Car;
 
 public class HondaCivic extends Car {
+    private double mileage;
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
     /**
      * A civic should need an oil change every
      * 50,000 miles traveled. Once the oil is
@@ -13,7 +19,13 @@ public class HondaCivic extends Car {
      */
     @Override
     public Boolean needsOilChange() {
-        return null;
+        //condition: Mileage > 50000
+        if(getDistanceTravel() <= 50000.0){
+            changeOil();
+            return false;
+        }
+        changeOil();
+        return true;
     }
 
     /**
@@ -25,7 +37,8 @@ public class HondaCivic extends Car {
      */
     @Override
     public void changeOil() {
-
+        mileage = 0.0;
+        System.out.println("50,000 miles may be traveled before another oil change is needed.");
     }
 
     /**
@@ -37,7 +50,9 @@ public class HondaCivic extends Car {
      */
     @Override
     public Boolean checkEngineLight() {
-        return null;
+        if(needsOilChange() == true){
+            return false;}
+        return true;
     }
 
     /**
@@ -48,18 +63,18 @@ public class HondaCivic extends Car {
      * than all previous values.
      * @return total distance as a Double
      */
-    @Override
-    public Double getDistanceTraveled() {
-        return null;
+    //@Override
+    public Double getDistanceTravel() {
+        return mileage;
     }
 
     /**
      * Should return the top speed for a Civic (70 MPH)
      * @return 70.0
      */
-    @Override
+    //@Override
     public Double getTopSpeed() {
-        return null;
+        return 70.0;
     }
 
     /**
@@ -70,8 +85,9 @@ public class HondaCivic extends Car {
      * @param distance - length of travel in miles
      * @return time in seconds to travel distance
      */
-    @Override
+    //@Override
     public Integer transport(Double distance) {
-        return null;
+        double timeInSeconds =  distance / getTopSpeed() * 60 * 60;
+        return (int)timeInSeconds;
     }
 }

@@ -1,6 +1,9 @@
 package Driving;
 
 public abstract class Car implements Drivable {
+
+    private double mileage;
+
     /**
      * Cars eventually need their oil changed.
      * Most cars simply need oil after a certain
@@ -37,5 +40,5 @@ public abstract class Car implements Drivable {
      *
      * @return the total number of miles traveled
      */
-    public abstract Double getDistanceTraveled();
+    public abstract Double getDistanceTravel();
 }
